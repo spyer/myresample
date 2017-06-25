@@ -1,6 +1,6 @@
 # myresample
 
-Resample tick data from bitcoincharts csv into OHLC bars  
+Resample tick data from bitcoincharts csv into **O**pen **H**igh **L**ow **C**lose bars with **V**olume  
 
 Installation:  
 
