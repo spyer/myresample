@@ -14,25 +14,30 @@ import os.path
 
 
 parser = argparse.ArgumentParser(description='Myresample: resample tick data into OHLCV')
+parser._action_groups.pop()
 
-parser.add_argument('--file', nargs=1, help='Path to input csv file')
-parser.add_argument('--outfile', nargs='?', help='Path to output csv file '
-                                                 '(default: "resampled" + "file" + "period".csv)')
+required = parser.add_argument_group('required arguments')
+optional = parser.add_argument_group('optional arguments')
 
-parser.add_argument('--period', nargs='?',
-                    help='Resample period (default: 15min). '
+required.add_argument('--file', nargs=1, help='Path to input csv file')
+
+
+optional.add_argument('--outfile', nargs='?', help='Path to output csv file '
+                                                   '(default: "resampled" + "file" + "period".csv)')
+
+optional.add_argument('--period', nargs='?',
+                      help='Resample period (default: 15min). '
                          'Pandas format (see more at: '
                          'http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases )')
-parser.add_argument('--fillna', nargs='?',
-                    help='How to fill N/A values (default: 0.0).')
-parser.add_argument('--sep', nargs='?',
-                    help='Output csv separator (default: ,).')
-
+optional.add_argument('--fillna', nargs='?',
+                      help='How to fill N/A values (default: 0.0).')
+optional.add_argument('--sep', nargs='?',
+                      help='Output csv separator (default: ,).')
 
 
 args = parser.parse_args()
 
-if args.file is None :
+if args.file is None:
     parser.print_help()
     sys.exit(0)
 
