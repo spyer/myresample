@@ -2,6 +2,7 @@
 Resample tick data from bitcoincharts csv into OHLC bars
 
 Installation:
+
 pip install pandas
 git clone https://github.com/spyer/myresample.git
 
