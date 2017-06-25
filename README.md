@@ -16,5 +16,5 @@ Pptional arguments:
   --outfile [OUTFILE]  Path to output csv file (default: "resampled" + "file" + "period".csv)
   --period [PERIOD]    Resample period (default: 15min). Pandas format 
                        (see more at: http://pandas.pydata.org/pandas-docs/stable/timeseries.html#offset-aliases )
-  --fillna [FILLNA]    How to fill N/A values (default: 0.0).
-  --sep [SEP]          Output csv separator (default: ,).
+  --fillna [FILLNA]    How to fill N/A values (default: 0.0)
+  --sep [SEP]          Output csv separator (default: ,)
